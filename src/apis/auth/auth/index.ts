@@ -1,12 +1,11 @@
 import { AxiosResponse } from 'axios';
 
 import axiosInstance from '../../base.api';
-import { LoginRequest } from './requests/login-request';
 import { LoginResponse } from './responses/login.response';
 
-const loginApi = async (requestBody: LoginRequest): Promise<LoginResponse> => {
+const loginApi = async (params: { username: string; password: string }) => {
   return axiosInstance
-    .post('/login', requestBody)
+    .post('/auth/login', params)
     .then((response: AxiosResponse<LoginResponse>) => {
       return response.data;
     })

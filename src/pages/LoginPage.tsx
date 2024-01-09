@@ -1,29 +1,20 @@
-import { useDispatch, useSelector } from 'react-redux';
-
-import { AppDispatch, AppState } from '../store';
-import { loginAction, logoutAction } from '../store/actions/auth.action';
+import LoginForm from '../components/form/login.Form';
+import Footer from '../components/partials/Footer';
+import '../../src/App.css';
+import logoImage from '../assets/images/ks_logo.png';
 
 function LoginPage() {
-  const dispatch: AppDispatch = useDispatch();
-
-  const isAuthenticated: boolean = useSelector((state: AppState) => state.authReducer.isAuthenticated);
-
-  const handleLogin = (): void => {
-    dispatch(loginAction(''));
-  };
-
-  const handleLogout = (): void => {
-    dispatch(logoutAction());
-  };
-
   return (
     <>
-      <div>Login</div>
-      {isAuthenticated ? 'true' : 'false'}
-      <button onClick={handleLogin}>Login</button>
-      <button onClick={handleLogout}>Logout</button>
+      <div id="login-page">
+        <div>
+          <img src={logoImage} alt="Logo" />
+          <h1>LSC-EC 拡張機能</h1>
+        </div>
+        <LoginForm />
+      </div>
+      <Footer />
     </>
   );
 }
-
 export default LoginPage;

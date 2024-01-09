@@ -1,4 +1,8 @@
-@import './common/variable.common.css';
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .app {
   text-align: center;
@@ -38,4 +42,43 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#login-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+#login-form {
+  max-width: 350px;
+  margin: 0 auto;
+}
+footer {
+  width: 100%;
+  text-align: center;
+  background-color: #e1e3e4;
+  position: absolute;
+  bottom: 0;
+}
+header {
+  background: rgb(56, 84, 238);
+  background: linear-gradient(90deg, rgba(56, 84, 238, 1) 81%, rgba(95, 200, 255, 1) 100%);
+  display: flex;
+}
+.nav-top {
+  display: flex;
+  /* background-color: red; */
+}
+.nav-top ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  color: aliceblue;
+}
+
+.nav-top ul span {
+  padding: 0 10px;
+  text-align: center;
 }
